@@ -238,7 +238,37 @@ const HomeScreen = () => {
           )}
         </View>
       </View>
-      
+      <Modal visible={true} transparent={true} animationType="slide">
+        <View className="flex-1 bg-[rgba(0,0,0,0.5)] flex justify-end">
+          <View className=" bg-white rounded-tr-[1.5rem] rounded-tl-[1.5rem] p-8 max-h-[80%]">
+            <View className="flex flex-row justify-between items-center mb-4">
+              <Text className="font-bold text-lg text-[#333]">
+                Notifications
+              </Text>
+              <TouchableOpacity className="p-2">
+                <Ionicons name="close" size={24} color="#333" />
+              </TouchableOpacity>
+            </View>
+            {[].map(() => {
+              <View className="flex flex-row p-5 rounded-md bg-[#f5f5f5] mb-4">
+                <View className="w-16 h-16 rounded-xl bg-[#e8f5e9] flex justify-center items-center mr-5">
+                  <Ionicons name="medical" size={24} color={""} />
+                </View>
+                <View className="flex-1">
+                  <Text className="font-semibold text-lg text-[#333] mb-1">
+                    medication name
+                  </Text>
+                  <Text className="text-base text-[#666] mb-1">
+                    {" "}
+                    medication dosage
+                  </Text>
+                  <Text className="text-sm text-[#999]"> medication time</Text>
+                </View>
+              </View>;
+            })}
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 };
